@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary" name="menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Videos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header class="ion-text-center"><h2 >Videos Informativos</h2></ion-card-header>
+
+    <ion-card  *ngFor="let videos of listaVideos">
+      <ion-card-header>
+        <ion-card-title>{{ videos['titulo'] }}</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <p><strong>Descripcion:</strong> {{ videos['descripcion'] }}</p>
+        <iframe width="100%" height="100%" [src]='this.transform(videos.link)'></iframe>
+      </ion-card-content>
+    </ion-card>
+
+  </ion-card>
+
+</ion-content>

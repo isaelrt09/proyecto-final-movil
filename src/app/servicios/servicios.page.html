@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="warning"> 
+    <ion-buttons slot="start">
+    <ion-menu-button color="primary" name="menu"></ion-menu-button>
+  </ion-buttons>
+    <ion-title>Servicios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header class="ion-text-center"><h2>Servicios Disponibles</h2></ion-card-header>
+
+    <ion-accordion-group *ngFor="let serv of lista">
+
+      <ion-accordion style="margin: 0.1em;">
+
+        <ion-item slot="header" color="warning">
+          {{ serv['nombre'] }}
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <p><strong>Descripcion:</strong> {{ serv['descripcion'] }}</p>
+          <img [src]="serv['foto']">
+        </div>
+
+      </ion-accordion>
+
+    </ion-accordion-group>
+
+  </ion-card>
+  
+
+</ion-content>
